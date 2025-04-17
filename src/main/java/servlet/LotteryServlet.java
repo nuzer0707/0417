@@ -30,7 +30,7 @@ public class LotteryServlet extends HttpServlet {
 		//2.生成調度器
 		RequestDispatcher rd = req.getRequestDispatcher("/lottery.jsp");
 		//3.傳遞樂透號碼
-		req.setAttribute("numbers", numbers);//裝備要傳遞的內容123456
+		req.setAttribute("numbers", numbers);//裝備要傳遞的內容
 		rd.forward(req, resp);
 	}
 
