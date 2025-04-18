@@ -1,6 +1,7 @@
 package servlet;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.rmi.ServerException;
 
 import util.Util;
@@ -22,9 +23,10 @@ public class BmiServlet extends HttpServlet {
 		
 		String height = req.getParameter("h");
 		String weight = req.getParameter("w");
+		PrintWriter out = resp.getWriter();
 		
 		if(!(Util.isDouble(height)&&Util.isDouble(weight))) {
-			System.out.println("身高體重輸入錯誤");
+			out.println("身高體重輸入錯誤");
 			return;
 		}
 		
@@ -33,8 +35,8 @@ public class BmiServlet extends HttpServlet {
 		double bimValue= getBmiValue(h,w);
 		String result= getBmiResult(bimValue);
 		
-		resp.getWriter().print(String.format("BMI 值 = %.2f (%s) \n",bimValue, result));	
-		resp.getWriter().print("小於18過輕，大於23過重");
+		out.print(String.format("BMI 值 = %.2f (%s) <br>",bimValue, result));	
+		out.print("小於18過輕，大於23過重");
 	}
 	private double getBmiValue(double h ,double w) {
 		return w/ Math.pow(h/100,2);	
