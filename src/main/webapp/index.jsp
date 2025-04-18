@@ -8,7 +8,15 @@
 </head>
 <body>
 	<h1>我的 JavaWeb 首頁</h1>
-
+	<h2>Servlet 應用</h2>
+	<ul>
+		<li>
+			<a href="http://localhost:8080/JavaWeb/hello">HelloServlet (使用 Model 0 servlet 或 JSP)</a>
+		</li>
+		<li>
+		<a href="/JavaWeb/lottery">LotteryServlet HelloServlet (使用 Model 1 servlet + JSP)</a>
+		</li>
+	</ul>
 	
 </body>
 </html>
