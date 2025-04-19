@@ -3,12 +3,13 @@ package model;
 import java.util.Map;
 
 public class CoffeeOrder {
+
 	private String type;
 	private String size;
 	private boolean sugar;
 	private int price;
 	
-	// 價格對照表
+	
 	private static final Map<String, Map<String, Integer>> priceTable = Map.of(
 			"latte", Map.of("S", 50, "M", 70, "L", 90),
 			"mocha", Map.of("S", 45, "M", 55, "L", 65),
@@ -20,9 +21,9 @@ public class CoffeeOrder {
 	
 	public CoffeeOrder(String type, String size, String sugar) {
 		this.type = type;
-		this.size = size;
+		this.size = size.toUpperCase();
 		this.sugar = Boolean.parseBoolean(sugar);
-		this.price = priceTable.get(type.toLowerCase()).get(size);
+		this.price = priceTable.get(type.toLowerCase()).get(this.size);
 	}
 	
 	public String getInfo() {
@@ -30,6 +31,7 @@ public class CoffeeOrder {
 		String sugarText = sugarTable.get(sugar);	
 		return String.format("您點了一杯 %s杯 %s 咖啡（%s）價格：%d 元", sizeText, type, sugarText, price);
 	}
+
 
 	public String getType() {
 		return type;
