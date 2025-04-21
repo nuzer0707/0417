@@ -10,6 +10,7 @@ import jakarta.servlet.http.HttpServletResponse;
 import model.DrinkOrder;
 
 @WebServlet("/drink")
+//http://localhost:8080/JavaWeb/drink?type=milkTea&size=L&ice=yes
 public class DrinkOrderServlet extends HttpServlet {
 
 	@Override
