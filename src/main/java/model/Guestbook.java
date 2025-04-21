@@ -2,26 +2,28 @@ package model;
 
 import java.util.Date;
 
+// 訪客留言版
 public class Guestbook {
-
+	
 	private String message;
 	private Date date;
 	
 	public Guestbook(String message) {
-		this.message=message;
-		this.date= new Date();
+		this.message = message;
+		this.date = new Date();
 	}
 
 	public String getMessage() {
 		return message;
 	}
 
-	public Date getData() {
+	public Date getDate() {
 		return date;
 	}
-	@Override 
+
+	@Override
 	public String toString() {
-		return "Guestbook [message=" + message + ", date=" + date + "]";
+		return "Guestbook : message=" + message + ", date=" + date +"</br>" ;
 	}
 	
 }

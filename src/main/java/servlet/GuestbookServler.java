@@ -17,7 +17,7 @@ import model.Guestbook;
 public class GuestbookServler extends HttpServlet {
 
 	private static final List<Guestbook> guestbooks = new CopyOnWriteArrayList<>();
-
+	
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		req.getRequestDispatcher("/WEB-INF/guestbook_form.jsp").forward(req, resp);
@@ -25,6 +25,7 @@ public class GuestbookServler extends HttpServlet {
 
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		req.setCharacterEncoding("UTF-8");
 		String message = req.getParameter("message");
 		
 		Guestbook guestbook = new Guestbook(message);
