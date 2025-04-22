@@ -7,6 +7,7 @@ public class Guestbook {
 	
 	private String message;
 	private Date date;
+
 	
 	public Guestbook(String message) {
 		this.message = message;
